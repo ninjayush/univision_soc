@@ -1,0 +1,58 @@
+#Lab:
+
+
+An "event-driven Scratch project" means code that waits for a trigger (an event) to run. 
+If you were building this in Scratch, you would drag these blocks together:
+Event: When green flag clicked $\rightarrow$ Forever loop.
+Condition: If < touching mouse pointer? > then Broadcast [Alert].
+Action: When I receive [Alert], Say [Intruder Detected!] for 2 seconds.
+
+
+Sample camera alert flowchart:
+[ Start: Camera Captures Frame ]
+                     │
+                     ▼
+         /───────────────────────\
+        <   Is a Person detected? >
+         \───────────────────────/
+                     │
+            Yes      │      No
+         ┌───────────┴───────────┐
+         ▼                       ▼
+   /───────────\           [ End: Ignore ]
+  < Is it past  >
+  <  8:00 PM?   >
+   \───────────/
+         │
+    Yes  │      No
+   ┌─────┴─────┐
+   ▼           ▼
+[ TRIGGER   [ End: Ignore ]
+ ALERT ]
+
+
+#Homework: Summary of Core Concepts
+
+1. Variables (Storage)
+What it is: A labeled container in the computer's memory that holds a piece of information that can change.
+
+In our AI System: A variable named current_occupant_count might store the number 3 when three people walk into a room, and change to 2 when someone leaves.
+
+2. Loops (Repetition)
+What it is: A structure that repeats a block of instructions over and over again until a specific condition tells it to stop.
+
+In our AI System: A Forever loop keeps the security camera running continuously: Loop: Capture Frame -> Analyze -> Repeat. Without a loop, the camera would take exactly one picture when turned on and then turn off forever.
+
+3. Events (Triggers)
+What it is: An action or occurrence detected by the program that signals a specific piece of code to run. It acts as an "if this happens, do that" trigger.
+
+In our AI System: When [Motion Detected] is an event. The system sits quietly until that specific event fires, which then wakes up the object detection code to see what caused the movement.
+
+4. Conditions (Decisions)
+What it is: A fork in the road that forces the program to make a decision based on whether a statement is True or False (If / Else).
+
+In this project: 
+
+IF confidence_score > 0.80: Sound the alarm.
+
+ELSE: Ignore it because it might just be a shadow.
