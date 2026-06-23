@@ -27,8 +27,6 @@ async def analyze_frame(payload: FrameRequest):
     # Validation: If the camera ID is missing, throw a 400 Bad Request error
     if not payload.camera_id:
         raise HTTPException(status_code=400, detail="camera_id is required")
-
-    # (This is where your Week 2 Python logic would run)
     
     # Mocking a successful response
     return {
