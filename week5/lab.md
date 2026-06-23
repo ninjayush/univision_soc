@@ -1,12 +1,14 @@
 # Lab
 
+```mermaid
 graph LR
-    A[Camera Source `<br/>`Out: Image] -->|Image| B(Grayscale Filter `<br/>`In: Image | Out: Image)
-    B -->|Image| C(OCR Engine `<br/>`In: Image | Out: TextList)
-    C -->|TextList| D{Data Filter `<br/>`In: TextList | Out: JSON}
+    A["Camera Source<br/>Out: Image"] -->|Image| B("Grayscale Filter<br/>In: Image | Out: Image")
+    B -->|Image| C("OCR Engine<br/>In: Image | Out: TextList")
+    C -->|TextList| D{"Data Filter<br/>In: TextList | Out: JSON"}
 
     %% Invalid connection example for validation testing
     %% D -->|JSON| B
+```
 
 ## Manual Validation (Topological Sorting)
 
